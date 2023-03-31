@@ -1,6 +1,6 @@
 Name:		texlive-babel-bosnian
 Version:	38174
-Release:	1
+Release:	2
 Summary:	Babel contrib support for Bosnian
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/babel-bosnian
