@@ -3,7 +3,7 @@ Version:	38174
 Release:	2
 Summary:	Babel contrib support for Bosnian
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/babel-bosnian
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-bosnian
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.doc.r%{version}.tar.xz
