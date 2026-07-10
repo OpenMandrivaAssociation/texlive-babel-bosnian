@@ -1,39 +1,24 @@
-Name:		texlive-babel-bosnian
-Version:	38174
-Release:	2
+%global tl_name babel-bosnian
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.1
+Release:	%{tl_revision}.1
 Summary:	Babel contrib support for Bosnian
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-bosnian
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/babel-contrib/bosnian
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-bosnian.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package provides a language definition file that enables
-support of Bosnian with babel.
+The package provides a language definition file that enables support of
+Bosnian with babel.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/generic/babel-bosnian
-%{_texmfdistdir}/tex/generic/babel-bosnian
-%doc %{_texmfdistdir}/doc/generic/babel-bosnian
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
